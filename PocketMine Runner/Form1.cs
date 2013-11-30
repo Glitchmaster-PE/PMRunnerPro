@@ -123,7 +123,7 @@ namespace WindowsFormsApplication1
                 m_pocketMineProcess = new Process();
                 m_pocketMineProcess.StartInfo.CreateNoWindow = true;
                 m_pocketMineProcess.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;
-                m_pocketMineProcess.StartInfo.WorkingDirectory = @"C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\PocketMine-MP";
+                m_pocketMineProcess.StartInfo.WorkingDirectory = textBox1.Text; // @"C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\PocketMine-MP";
                 m_pocketMineProcess.StartInfo.FileName = "bin\\php\\php.exe";
                 m_pocketMineProcess.StartInfo.Arguments = @"PocketMine-MP.php --enable-ansi %*";
                 //m_pocketMineProcess.StartInfo.Arguments = @"-o Columns=88 -o Rows=32 -o AllowBlinking=0 -o FontQuality=3 -o CursorType=0 -o CursorBlinks=1 -h error -t 'PocketMine-M' -i pocketmine.ico -w max php\php.exe -d enable_dl=On ..\PocketMine-MP.php --enable-ansi %*";
