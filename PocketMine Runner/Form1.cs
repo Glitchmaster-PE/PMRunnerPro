@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -55,17 +56,21 @@ namespace WindowsFormsApplication1
                 m_pocketMineProcess.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;
                 m_pocketMineProcess.StartInfo.WorkingDirectory = textBox1.Text;
                 m_pocketMineProcess.StartInfo.FileName = "bin\\php\\php.exe";
-                m_pocketMineProcess.StartInfo.Arguments = @"PocketMine-MP.php --enable-ansi %*";
+                m_pocketMineProcess.StartInfo.Arguments = "PocketMine-MP.php --enable-ansi %*";
                 //m_pocketMineProcess.StartInfo.Arguments = @"-o Columns=88 -o Rows=32 -o AllowBlinking=0 -o FontQuality=3 -o CursorType=0 -o CursorBlinks=1 -h error -t 'PocketMine-M' -i pocketmine.ico -w max php\php.exe -d enable_dl=On ..\PocketMine-MP.php --enable-ansi %*";
                 //m_pocketMineProcess.StartInfo.UseShellExecute = false;
                 //m_pocketMineProcess.StartInfo.RedirectStandardInput = true;
                 //m_pocketMineProcess.StartInfo.RedirectStandardOutput = true;
 
+                //m_pocketMineProcess.StartInfo.EnvironmentVariables["PATH"] = m_pocketMineProcess.StartInfo.EnvironmentVariables["PATH"].ToString().Replace(@"\\", @"\");
+
+                // Manipulate dictionary...
+
                 try
                 {
                     m_pocketMineProcess.Start();
                 }
-                catch(Exception)
+                catch(Exception err)
                 {
                     MessageBox.Show("This is not a valid PockeMine directory.");
                     return;
@@ -173,6 +178,83 @@ namespace WindowsFormsApplication1
             }
 
             key.SetValue("PocketMine Path", textBox1.Text);
+        }
+
+
+        private void button9_Click(object sender, EventArgs e) //OPs
+        {
+            string text = System.IO.File.ReadAllText(textBox1.Text + "\\ops.txt");
+            if (text.Equals(""))
+            {
+                MessageBox.Show("No OP users");
+            }
+            else
+            {
+                MessageBox.Show(text);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e) //Banned
+        {
+            string text = System.IO.File.ReadAllText(textBox1.Text + "\\banned.txt");
+            if (text.Equals(""))
+            {
+                MessageBox.Show("No banned users");
+            }
+            else
+            {
+                MessageBox.Show(text);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e) //Banned IPs
+        {
+            string text = System.IO.File.ReadAllText(textBox1.Text + "\\banned-ips.txt");
+            if (text.Equals(""))
+            {
+                MessageBox.Show("No banned ips");
+            }
+            else
+            {
+                MessageBox.Show(text);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e) //Whitelist
+        {
+            string text = System.IO.File.ReadAllText(textBox1.Text + "\\white-list.txt");
+            if (text.Equals(""))
+            {
+                MessageBox.Show("No whitelisted users");
+            }
+            else
+            {
+                MessageBox.Show(text);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e) //Properties
+        {
+            string text = System.IO.File.ReadAllText(textBox1.Text + "\\server.properties");
+            MessageBox.Show(text);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string[] files = Directory.GetFiles(textBox1.Text + "\\Plugins");
+            string allFiles = string.Empty;
+            foreach (string file in files)
+            {
+                allFiles += Path.GetFileName(file).Substring(0,Path.GetFileName(file).Length - 4) + Environment.NewLine;
+            }
+            if (allFiles == string.Empty)
+            {
+                allFiles = "No Plugins Found";
+            }
+            else
+            {
+                MessageBox.Show(allFiles);
+            }
         }
         }
 
