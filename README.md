@@ -1,4 +1,4 @@
-PocketMine-Runner--Raw-
+PMRunnerPro
 =======================
 
 Runs PocketMine with an interface
