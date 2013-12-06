@@ -1,4 +1,4 @@
 PocketMine-Runner--Raw-
 =======================
 
-This is the actual files for PocketMine Runner
+Runs PocketMine with an interface
