@@ -149,6 +149,7 @@
             // 
             resources.ApplyResources(this.CommandImputTextBox, "CommandImputTextBox");
             this.CommandImputTextBox.Name = "CommandImputTextBox";
+            this.CommandImputTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PressKey);
             // 
             // CMDInputTextBox
             // 

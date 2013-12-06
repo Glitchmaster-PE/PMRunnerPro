@@ -378,8 +378,14 @@ namespace WindowsFormsApplication1
                 }
         }
 
+        private void PressKey(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r' && CommandImputTextBox.Text != "")
+            {
+                button11_Click(sender, e);
+            }
         }
 
-    
+        } 
 }
  
