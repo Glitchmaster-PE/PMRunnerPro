@@ -10,3 +10,20 @@ C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\Wi
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\en-US\PMRunnerPro.resources.dll
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\PMRunnerPro.exe
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\PMRunnerPro.pdb
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\bin\Debug\PMRunnerPro.exe.config
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PMRunnerPro.exe
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PMRunnerPro.pdb
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\bin\Debug\PMRunnerPro.exe
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\bin\Debug\PMRunnerPro.pdb
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\bin\Debug\en-US\PMRunnerPro.resources.dll
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PMRunnerPro.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PMRunnerPro.Properties.Resources.resources
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PocketMineRunner.ServerProperties.resources
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.en-US.resources
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PMRunnerPro.csproj.GenerateResource.Cache
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\en-US\PMRunnerPro.resources.dll
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\bin\Debug\PMRunnerPro.exe.manifest
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\bin\Debug\PMRunnerPro.application
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PMRunnerPro.exe.manifest
+C:\Users\Lucas\Documents\GitHub\PocketMine-Runner--Raw-\WindowsFormsApplication1\obj\Debug\PMRunnerPro.application

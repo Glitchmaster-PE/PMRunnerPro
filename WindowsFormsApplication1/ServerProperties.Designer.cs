@@ -69,7 +69,7 @@
             this.RCON_Password.Location = new System.Drawing.Point(197, 406);
             this.RCON_Password.Name = "RCON_Password";
             this.RCON_Password.Size = new System.Drawing.Size(128, 20);
-            this.RCON_Password.TabIndex = 82;
+            this.RCON_Password.TabIndex = 15;
             // 
             // Enable_RCON
             // 
@@ -78,7 +78,7 @@
             this.Enable_RCON.Location = new System.Drawing.Point(197, 385);
             this.Enable_RCON.Name = "Enable_RCON";
             this.Enable_RCON.Size = new System.Drawing.Size(48, 17);
-            this.Enable_RCON.TabIndex = 81;
+            this.Enable_RCON.TabIndex = 14;
             this.Enable_RCON.Text = "True";
             this.Enable_RCON.UseVisualStyleBackColor = true;
             // 
@@ -89,7 +89,7 @@
             this.Enable_Query.Location = new System.Drawing.Point(197, 353);
             this.Enable_Query.Name = "Enable_Query";
             this.Enable_Query.Size = new System.Drawing.Size(48, 17);
-            this.Enable_Query.TabIndex = 80;
+            this.Enable_Query.TabIndex = 13;
             this.Enable_Query.Text = "True";
             this.Enable_Query.UseVisualStyleBackColor = true;
             // 
@@ -98,7 +98,7 @@
             this.Level_Type.Location = new System.Drawing.Point(197, 327);
             this.Level_Type.Name = "Level_Type";
             this.Level_Type.Size = new System.Drawing.Size(128, 20);
-            this.Level_Type.TabIndex = 79;
+            this.Level_Type.TabIndex = 12;
             this.Level_Type.Text = "-";
             // 
             // Level_Name
@@ -106,7 +106,7 @@
             this.Level_Name.Location = new System.Drawing.Point(197, 301);
             this.Level_Name.Name = "Level_Name";
             this.Level_Name.Size = new System.Drawing.Size(128, 20);
-            this.Level_Name.TabIndex = 78;
+            this.Level_Name.TabIndex = 11;
             this.Level_Name.Text = "World";
             // 
             // PvP
@@ -116,7 +116,7 @@
             this.PvP.Location = new System.Drawing.Point(197, 280);
             this.PvP.Name = "PvP";
             this.PvP.Size = new System.Drawing.Size(48, 17);
-            this.PvP.TabIndex = 77;
+            this.PvP.TabIndex = 10;
             this.PvP.Text = "True";
             this.PvP.UseVisualStyleBackColor = true;
             // 
@@ -127,7 +127,7 @@
             this.HardCore.Location = new System.Drawing.Point(197, 256);
             this.HardCore.Name = "HardCore";
             this.HardCore.Size = new System.Drawing.Size(48, 17);
-            this.HardCore.TabIndex = 76;
+            this.HardCore.TabIndex = 9;
             this.HardCore.Text = "True";
             this.HardCore.UseVisualStyleBackColor = true;
             // 
@@ -136,7 +136,7 @@
             this.Gamemode.Location = new System.Drawing.Point(197, 230);
             this.Gamemode.Name = "Gamemode";
             this.Gamemode.Size = new System.Drawing.Size(128, 20);
-            this.Gamemode.TabIndex = 75;
+            this.Gamemode.TabIndex = 8;
             this.Gamemode.Text = "0";
             // 
             // Max_Players
@@ -144,7 +144,7 @@
             this.Max_Players.Location = new System.Drawing.Point(197, 205);
             this.Max_Players.Name = "Max_Players";
             this.Max_Players.Size = new System.Drawing.Size(128, 20);
-            this.Max_Players.TabIndex = 74;
+            this.Max_Players.TabIndex = 7;
             this.Max_Players.Text = "0";
             // 
             // Spawn_Protection
@@ -152,7 +152,7 @@
             this.Spawn_Protection.Location = new System.Drawing.Point(197, 179);
             this.Spawn_Protection.Name = "Spawn_Protection";
             this.Spawn_Protection.Size = new System.Drawing.Size(128, 20);
-            this.Spawn_Protection.TabIndex = 73;
+            this.Spawn_Protection.TabIndex = 6;
             this.Spawn_Protection.Text = "0";
             // 
             // White_List
@@ -162,7 +162,7 @@
             this.White_List.Location = new System.Drawing.Point(197, 157);
             this.White_List.Name = "White_List";
             this.White_List.Size = new System.Drawing.Size(48, 17);
-            this.White_List.TabIndex = 72;
+            this.White_List.TabIndex = 5;
             this.White_List.Text = "True";
             this.White_List.UseVisualStyleBackColor = true;
             // 
@@ -171,7 +171,7 @@
             this.Server_Port.Location = new System.Drawing.Point(197, 132);
             this.Server_Port.Name = "Server_Port";
             this.Server_Port.Size = new System.Drawing.Size(128, 20);
-            this.Server_Port.TabIndex = 71;
+            this.Server_Port.TabIndex = 4;
             this.Server_Port.Text = "19132";
             // 
             // Server_IP
@@ -179,14 +179,14 @@
             this.Server_IP.Location = new System.Drawing.Point(197, 104);
             this.Server_IP.Name = "Server_IP";
             this.Server_IP.Size = new System.Drawing.Size(128, 20);
-            this.Server_IP.TabIndex = 70;
+            this.Server_IP.TabIndex = 3;
             // 
             // MOTD
             // 
             this.MOTD.Location = new System.Drawing.Point(197, 78);
             this.MOTD.Name = "MOTD";
             this.MOTD.Size = new System.Drawing.Size(128, 20);
-            this.MOTD.TabIndex = 69;
+            this.MOTD.TabIndex = 2;
             this.MOTD.Text = "Welcome @player to this server!";
             // 
             // Server_Description
@@ -194,7 +194,7 @@
             this.Server_Description.Location = new System.Drawing.Point(197, 51);
             this.Server_Description.Name = "Server_Description";
             this.Server_Description.Size = new System.Drawing.Size(128, 20);
-            this.Server_Description.TabIndex = 68;
+            this.Server_Description.TabIndex = 1;
             this.Server_Description.Text = "Server made using PocketMine-MP";
             // 
             // Server_Name
@@ -202,7 +202,7 @@
             this.Server_Name.Location = new System.Drawing.Point(197, 22);
             this.Server_Name.Name = "Server_Name";
             this.Server_Name.Size = new System.Drawing.Size(128, 20);
-            this.Server_Name.TabIndex = 67;
+            this.Server_Name.TabIndex = 0;
             this.Server_Name.Text = "Minecraft: PE Server";
             // 
             // label18
@@ -386,7 +386,7 @@
             this.Cancel_Button.Location = new System.Drawing.Point(197, 451);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(75, 23);
-            this.Cancel_Button.TabIndex = 83;
+            this.Cancel_Button.TabIndex = 17;
             this.Cancel_Button.Text = "Cancel";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
@@ -396,7 +396,7 @@
             this.Ok_Button.Location = new System.Drawing.Point(104, 451);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(75, 23);
-            this.Ok_Button.TabIndex = 84;
+            this.Ok_Button.TabIndex = 16;
             this.Ok_Button.Text = "Ok";
             this.Ok_Button.UseVisualStyleBackColor = true;
             this.Ok_Button.Click += new System.EventHandler(this.Ok_Button_Click);

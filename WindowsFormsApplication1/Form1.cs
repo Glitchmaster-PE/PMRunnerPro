@@ -42,6 +42,8 @@ namespace WindowsFormsApplication1
                 ServerPathTextBox.Text = Application.StartupPath;
             else
                 ServerPathTextBox.Text = path;
+
+            pictureBox1.Location = new Point(213, 33);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

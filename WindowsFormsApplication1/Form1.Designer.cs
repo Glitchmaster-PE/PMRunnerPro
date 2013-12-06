@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.ServerPathTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +46,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.CommandImputTextBox = new System.Windows.Forms.TextBox();
             this.CMDInputTextBox = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
+            this.EnterButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,13 +57,6 @@
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // button3
             // 
@@ -162,19 +155,27 @@
             resources.ApplyResources(this.CMDInputTextBox, "CMDInputTextBox");
             this.CMDInputTextBox.Name = "CMDInputTextBox";
             // 
-            // button11
+            // EnterButton
             // 
-            resources.ApplyResources(this.button11, "button11");
-            this.button11.Name = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            resources.ApplyResources(this.EnterButton, "EnterButton");
+            this.EnterButton.Name = "EnterButton";
+            this.EnterButton.UseVisualStyleBackColor = true;
+            this.EnterButton.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
+            this.AcceptButton = this.EnterButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.EnterButton);
             this.Controls.Add(this.CMDInputTextBox);
             this.Controls.Add(this.CommandImputTextBox);
             this.Controls.Add(this.ConsoleTextBox);
@@ -189,7 +190,6 @@
             this.Controls.Add(this.ServerPathTextBox);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -205,7 +205,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox ServerPathTextBox;
@@ -221,7 +220,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox CommandImputTextBox;
         private System.Windows.Forms.Label CMDInputTextBox;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button EnterButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
