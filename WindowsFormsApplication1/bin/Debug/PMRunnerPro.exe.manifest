@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xWwUBG+JfjBrXJ+cqDKMLPKMS1iSCMf4n/Km/Nfmldc=</dsig:DigestValue>
+        <dsig:DigestValue>UQr2eDhrdYYz8LV4TYUPCHo3Z6eP2vZszbXEVW/SBvY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,17 +61,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PZGfxDt02jgIBGoR/854ckWk1sPVI/lsaGrE/vJvYg0=</dsig:DigestValue>
+        <dsig:DigestValue>cXSluRc7ByE/2NzQ/7q5IxstFCrKAmqh1kDnE1gKCDc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="PMRunnerPro.exe.config" size="187">
+  <file name="PMRunnerPro.exe.config" size="182">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+      <dsig:DigestValue>PbQiHFOih9uz3RPvvsStiPKcsu3PE8/gyCn2QGUyyf4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

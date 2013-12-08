@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
 
                 m_pocketMineProcess.StandardInput.WriteLine("bin\\php\\php.exe " + "PocketMine-MP.php --enable-ansi %*");
 
-                System.Threading.Thread.Sleep(10000);
+                //System.Threading.Thread.Sleep(10000);
 
                 button1.Enabled = false;
                 button3.Enabled = true;

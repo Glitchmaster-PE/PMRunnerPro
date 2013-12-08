@@ -1,4 +1,3 @@
-C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PMRunnerPro.csprojResolveAssemblyReference.cache
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Form1.resources
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PocketMineRunner.ServerProperties.resources
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Form1.en-US.resources
@@ -11,3 +10,8 @@ C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\Wi
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\en-US\PMRunnerPro.resources.dll
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PMRunnerPro.exe
 C:\Users\Lucas\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PMRunnerPro.pdb
+C:\Users\Lucas\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PMRunnerPro.exe.manifest
+C:\Users\Lucas\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PMRunnerPro.application
+C:\Users\Lucas\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PMRunnerPro.exe.manifest
+C:\Users\Lucas\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PMRunnerPro.application
+C:\Users\Lucas\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PMRunnerPro.csprojResolveAssemblyReference.cache
