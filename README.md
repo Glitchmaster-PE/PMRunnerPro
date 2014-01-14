@@ -31,7 +31,7 @@ This app runs PocketMine-MP with a GUI and interface. This app is made by Glitch
   - Properties: Shows an editable list of the key server.properties properties
 - Once the server is running, you can enter a command in the text box at the bottom of your screen and when pressing enter, you can run the command you entered
  
-That is just about it, comment any questions or suggestions you might have on the [topic in the forums](http://forums.pocketmine.net/index.php?threads/pmrunnerpro.1330/). If you find an issue, report it in the "Issues" section of this repository!
+That is just about it, comment any questions or suggestions you might have on the [topic in the forums](http://forums.pocketmine.net/index.php?threads/pmrunnerpro.1330/). If you find an issue, report it in the "Issues" section of this repository.
 
 Enjoy!
 
