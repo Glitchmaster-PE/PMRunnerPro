@@ -7,7 +7,7 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PMRunnerPro.exe.manifest" size="4143">
+    <dependentAssembly dependencyType="install" codebase="Application Files\PMRunnerPro_1_1_0_4\PMRunnerPro.exe.manifest" size="4143">
       <assemblyIdentity name="PMRunnerPro.exe" version="1.1.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
