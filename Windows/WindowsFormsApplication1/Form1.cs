@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,14 +37,14 @@ namespace WindowsFormsApplication1
             if (objPath != null)
                 path = objPath.ToString();
 
-            button3.Enabled = false;
+            Exit.Enabled = false;
 
             if (path == string.Empty)
-                ServerPathTextBox.Text = Application.StartupPath;
+                ServerPathTextBox.Text = "";
             else
                 ServerPathTextBox.Text = path;
 
-            pictureBox1.Location = new Point(213, 33);
+            pictureBox1.Location = new Point(95, 91);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -53,9 +54,9 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false)
+            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false || !File.Exists(ServerPathTextBox.Text + "\\PocketMine-MP.phar"))
             {
-                MessageBox.Show("Please browse to a valid PHP working directory.");
+                MessageBox.Show("Please browse to a valid PocketMine-MP directory.");
                 return;
             }
 
@@ -94,13 +95,14 @@ namespace WindowsFormsApplication1
 
                 //System.Threading.Thread.Sleep(10000);
 
-                m_pocketMineProcess.StandardInput.WriteLine("bin\\php\\php.exe " + "PocketMine-MP.php --enable-ansi %*");
+                m_pocketMineProcess.StandardInput.WriteLine("bin\\php\\php.exe " + "PocketMine-MP.phar --disable-ansi %*");
 
                 //System.Threading.Thread.Sleep(10000);
 
-                button1.Enabled = false;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                Start.Enabled = false;
+                Exit.Enabled = true;
+                Restart.Enabled = true;
+                properties.Enabled = false;
                 UseWaitCursor = false;
                 Cursor = Cursors.Arrow;
             }
@@ -113,6 +115,9 @@ namespace WindowsFormsApplication1
             {
                 m_UpdateConsoleLines = true;
                 m_ConsoleLines.Add(outLine.Data);
+
+                //Regex reg = new Regex("\\u.*3[0..9]");
+
                 Console.WriteLine(outLine.Data);
             }
         }
@@ -133,13 +138,15 @@ namespace WindowsFormsApplication1
                 m_pocketMineProcess.OutputDataReceived -= m_pocketMineProcess_OutputDataReceived;
                 m_pocketMineProcess = null;
             }
-            button1.Enabled = true;
-            button3.Enabled = false;
+            Start.Enabled = true;
+            Exit.Enabled = false;
+            Restart.Enabled = false;
+            properties.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ServerPathTextBox.Text = PMRunnerPro.Properties.Settings.Default.PocketMinePath;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -184,12 +191,12 @@ namespace WindowsFormsApplication1
 
                 //System.Threading.Thread.Sleep(10000);
 
-                m_pocketMineProcess.StandardInput.WriteLine("bin\\php\\php.exe " + "PocketMine-MP.php --enable-ansi %*");
+                m_pocketMineProcess.StandardInput.WriteLine("bin\\php\\php.exe " + "PocketMine-MP.phar --disable-ansi %*");
 
                 System.Threading.Thread.Sleep(10000);
-                button1.Enabled = false;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                Start.Enabled = false;
+                Exit.Enabled = true;
+                Restart.Enabled = true;
                 UseWaitCursor = false;
                 Cursor = Cursors.Arrow;
             }
@@ -209,26 +216,24 @@ namespace WindowsFormsApplication1
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ServerPathTextBox.Text = dlg.SelectedPath;
+                PMRunnerPro.Properties.Settings.Default.PocketMinePath = ServerPathTextBox.Text;
+                PMRunnerPro.Properties.Settings.Default.Save();
             }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\Lucas", true);
-            if (key == null)
-            {
-                key = Registry.CurrentUser.CreateSubKey("Software\\Lucas", RegistryKeyPermissionCheck.ReadWriteSubTree);
-            }
 
-            key.SetValue("PocketMine Path", ServerPathTextBox.Text);
         }
 
 
         private void button9_Click(object sender, EventArgs e) //OPs
         {
-            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false)
+
+
+            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false || !File.Exists(ServerPathTextBox.Text + "\\PocketMine-MP.phar"))
             {
-                MessageBox.Show("Please browse to a valid PHP working directory.");
+                MessageBox.Show("Please browse to a valid PocketMine-MP directory.");
                 return;
             }
             else
@@ -247,30 +252,30 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e) //Banned
         {
-            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false)
+            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false || !File.Exists(ServerPathTextBox.Text + "\\PocketMine-MP.phar"))
             {
-                MessageBox.Show("Please browse to a valid PHP working directory.");
+                MessageBox.Show("Please browse to a valid PocketMine-MP directory.");
                 return;
             }
             else
             {
-                string text = System.IO.File.ReadAllText(ServerPathTextBox.Text + "\\banned.txt");
+                string text = System.IO.File.ReadAllText(ServerPathTextBox.Text + "\\banned-players.txt");
                 if (text.Equals(""))
                 {
                     MessageBox.Show("No banned users");
                 }
                 else
                 {
-                    MessageBox.Show(text);
+                    MessageBox.Show(text.Replace("# ","").Replace("|"," | "));
                 }
             }
         }
 
         private void button8_Click(object sender, EventArgs e) //Banned IPs
         {
-            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false)
+            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false || !File.Exists(ServerPathTextBox.Text + "\\PocketMine-MP.phar"))
             {
-                MessageBox.Show("Please browse to a valid PHP working directory.");
+                MessageBox.Show("Please browse to a valid PocketMine-MP directory.");
                 return;
             }
             else
@@ -282,16 +287,16 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    MessageBox.Show(text);
+                    MessageBox.Show(text.Replace("# ", "").Replace("|", " | "));
                 }
             }
         }
 
         private void button7_Click(object sender, EventArgs e) //Whitelist
         {
-            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false)
+            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false || !File.Exists(ServerPathTextBox.Text + "\\PocketMine-MP.phar"))
             {
-                MessageBox.Show("Please browse to a valid PHP working directory.");
+                MessageBox.Show("Please browse to a valid PocketMine-MP directory.");
                 return;
             }
             else
@@ -310,9 +315,9 @@ namespace WindowsFormsApplication1
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false)
+            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false || !File.Exists(ServerPathTextBox.Text + "\\PocketMine-MP.phar"))
             {
-                MessageBox.Show("Please browse to a valid PHP working directory.");
+                MessageBox.Show("Please browse to a valid PocketMine-MP directory.");
                 return;
             }
             else
@@ -321,7 +326,7 @@ namespace WindowsFormsApplication1
                 string allFiles = string.Empty;
                 foreach (string file in files)
                 {
-                    allFiles += Path.GetFileName(file).Substring(0, Path.GetFileName(file).Length - 4) + Environment.NewLine;
+                    allFiles += Path.GetFileName(file).Substring(0, Path.GetFileName(file).Length - 5).Replace('_',' ') + Environment.NewLine;
                 }
                 if (allFiles == string.Empty)
                 {
@@ -338,10 +343,18 @@ namespace WindowsFormsApplication1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ServerProperties dlg = new ServerProperties(ServerPathTextBox.Text);
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ServerPathTextBox.Text == string.Empty || Directory.Exists(ServerPathTextBox.Text) == false || !File.Exists(ServerPathTextBox.Text + "\\PocketMine-MP.phar"))
             {
-                //Save the new settings
+                MessageBox.Show("Please browse to a valid PocketMine-MP directory.");
+                return;
+            }
+            else
+            {
+                ServerProperties dlg = new ServerProperties(ServerPathTextBox.Text);
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //Save the new settings
+                }
             }
         }
 
@@ -367,8 +380,24 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        m_pocketMineProcess.StandardInput.WriteLine(CommandImputTextBox.Text);
-                        CommandImputTextBox.Text = null;
+                        if (checkBox1.Checked == true)
+                        {
+                            if (CommandImputTextBox.Text.StartsWith("/"))
+                            {
+                                m_pocketMineProcess.StandardInput.WriteLine(CommandImputTextBox.Text.Remove(0, 1));
+                                CommandImputTextBox.Text = null;
+                            }
+                            else
+                            { 
+                                m_pocketMineProcess.StandardInput.WriteLine("say " + CommandImputTextBox.Text);
+                                CommandImputTextBox.Text = null;
+                            }
+                    }
+                        else
+                        {
+                            m_pocketMineProcess.StandardInput.WriteLine(CommandImputTextBox.Text);
+                            CommandImputTextBox.Text = null;
+                        }
                     }
                 }
                 else
@@ -378,7 +407,46 @@ namespace WindowsFormsApplication1
                 }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                Start.BackColor = Color.FromArgb(255, 192, 192);
+                Exit.BackColor = Color.FromArgb(255, 192, 192);
+                Restart.BackColor = Color.FromArgb(255, 192, 192);
+                banned.BackColor = Color.FromArgb(255, 192, 192);
+                bannedips.BackColor = Color.FromArgb(255, 192, 192);
+                ops.BackColor = Color.FromArgb(255, 192, 192);
+                whitelist.BackColor = Color.FromArgb(255, 192, 192);
+                plugins.BackColor = Color.FromArgb(255, 192, 192);
+                properties.BackColor = Color.FromArgb(255, 192, 192);
+                browse.BackColor = Color.FromArgb(255, 192, 192);
+                ConsoleTextBox.BackColor = Color.FromArgb(255, 192, 192);
+                EnterButton.BackColor = Color.FromArgb(255, 192, 192);
+            }
+            else
+            {
+                Start.BackColor = Color.FromArgb(192, 192, 255);
+                Exit.BackColor = Color.FromArgb(192, 192, 255);
+                Restart.BackColor = Color.FromArgb(192, 192, 255);
+                banned.BackColor = Color.FromArgb(192, 192, 255);
+                bannedips.BackColor = Color.FromArgb(192, 192, 255);
+                ops.BackColor = Color.FromArgb(192, 192, 255);
+                whitelist.BackColor = Color.FromArgb(192, 192, 255);
+                plugins.BackColor = Color.FromArgb(192, 192, 255);
+                properties.BackColor = Color.FromArgb(192, 192, 255);
+                browse.BackColor = Color.FromArgb(192, 192, 255);
+                ConsoleTextBox.BackColor = Color.FromArgb(192, 192, 255);
+                EnterButton.BackColor = Color.FromArgb(192, 192, 255);
+            }
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PMRunnerPro.Properties.Settings.Default.PocketMinePath = ServerPathTextBox.Text;
+            PMRunnerPro.Properties.Settings.Default.Save();
+        }
+    }
 
     
 }
